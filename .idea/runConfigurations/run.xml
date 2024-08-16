@@ -1,6 +1,5 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="run" type="PythonConfigurationType" factoryName="Python">
-    <output_file path="$PROJECT_DIR$/output/log.txt" is_save="true" />
     <module name="pythonProject" />
     <option name="ENV_FILES" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />

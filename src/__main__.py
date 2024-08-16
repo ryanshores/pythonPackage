@@ -1,27 +1,19 @@
+import config
+import logging
+import writeScores
+from src.writeScores import logger
 
-import csv
+LOGFILE_DIR = '../tmp/run.log'
 
-COLUMNS = ["id", "name", "score"]
-RYAN = [1, "Ryan", 100]
-KYLE = [2, "Kyle", 90]
-JOHN = [3, "John", 80]
+def main():
+    config.configure_logger()
+    logging.info('### START')
+    logging.error("error")
+    logger.debug("debug")
+    logger.warning("warn")
+    logger.fatal("fatal")
+    writeScores.createCsv()
+    logging.info('### END')
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-def createCsv():
-    with open("data.csv", "w") as f:
-        writer = csv.writer(f)
-        writer.writerow(COLUMNS)
-        writer.writerow(RYAN)
-        writer.writerow(KYLE)
-        writer.writerow(JOHN)
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    createCsv()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main()
