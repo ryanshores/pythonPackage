@@ -9,12 +9,12 @@ def configure_logger():
     logging.basicConfig(level=logging.DEBUG,
                         filename=OUTPUT_DIR / "run.log",
                         filemode='w',
-                        format='%(asctime)s - %(levelname)-8s - %(message)s',
-                        datefmt='%Y/%m/%d %I:%M:%S %p')
+                        format='[%(levelname).1s] %(message)s -> %(name)s.%(funcName)s:%(lineno)d @ %(asctime)s',
+                        datefmt='%m-%d.%H:%M:%S')
 
     console = logging.StreamHandler()
     console.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(levelname)-8s | %(message)s')
+    formatter = logging.Formatter('[%(levelname).1s] %(message)s -> %(funcName)s:%(lineno)d')
     console.setFormatter(formatter)
 
     logging.getLogger('').addHandler(console)
